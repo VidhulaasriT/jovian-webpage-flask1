@@ -2,50 +2,35 @@
 <html>
   <head>
     <title>Jovian Careers</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <style>
-      h1{
-        font-size:40px;
-        font-family: Roboto;
-        font-weight: normal;
-        color: #6B728E;
-        text-align: center;
-        object-fit: cover;
-      }
-      #banner {
+      #banner{
         width: 100%;
         height:360px;
-        object-fit: cover;
-      }
-      h2 {
-        font-family: Roboto;
-        font-size: 32px;
-        text-align: center;
-        color: #6B728E;
-        font-weight: normal;
-      }
-      .bodytext{
-        font-family: Roboto;
-        color: #6B728E;
-        
-      }
-      #container {
-        max-width: 720px;
-        margin:0 auto
+
       }
     </style>
+    
   </head>
   <body>
-    <div id="container">
-    <h1>Jovian Careers</h1>
-    <img id="banner" src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGNhcmVlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60">
-    <h2>About Jovian</h2>
-    <p class="bodytext">There's often more than one way to learn how to do a job. If you like learning by doing, an occupation with an apprenticeship might be for you.Choosing the right career options is like playing a strategic game. Most of us spend over one-third of our lives working. Knowing that a lot of your waking hours will be spent at work, the work you choose to do must be carefully planned. When the career options were limited, it may have been simpler to decide. However, it’s much more challenging to pick and train for a career now when so many career options are accessible.</p>
-    <h2>Open Positions</h2>
-    <p class="bodytext">TODO - Show job options here</p>
+    <div class="container">
+    <h1 class="text-center mt-2 mb-4">{{company_name}} Careers</h1>
+    <img class="img-fluid" id="banner" src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGNhcmVlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60">
+    <h2 class="text-center mt-2 mb-4 ">About Jovian</h2>
+    <p class="lead">There's often more than one way to learn how to do a job. If you like learning by doing, an occupation with an apprenticeship might be for you.Choosing the right career options is like playing a strategic game. Most of us spend over one-third of our lives working. When the career options were limited, it may have been simpler to decide. However, it’s much more challenging to pick and train for a career now when so many career options are accessible.</p>
+    <h2 class="text-center mt-2 mb-4">Open Positions</h2>
+      <div>
+      {% for job in jobs %}
+        {% include 'jobitem.html' %}
+      {% endfor %}
+        </div>
       <div style = "text-align:center;">
-    <button>Contact Us</button>
-        <p >CopyRight 2023, Jovian</p>
+    <button class="btn btn-primary btn-lg mb-4">Contact Us</button>
+        <p>CopyRight 2023, Jovian</p>
       </div>
-  </div>
+    </div>
   </body>
 </html>
